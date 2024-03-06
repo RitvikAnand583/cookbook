@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import NavBar from "../ui/NavBar";
 import SideBar from "../ui/SideBar";
@@ -17,6 +17,8 @@ const StyledConatiner = styled.div`
 `;
 
 function AppLayout() {
+  console.log("here");
+
   return (
     <StyledAppLayout>
       <SideBar />

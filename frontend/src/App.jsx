@@ -8,11 +8,11 @@ import PageNotFound from "./pages/PageNotFound";
 
 const router = createBrowserRouter([
   {
-    path: "/app",
+    path: "/",
     element: <AppLayout />,
     children: [
       {
-        path: "feed",
+        path: "/feed",
         element: <Feed />,
         index: true,
       },
