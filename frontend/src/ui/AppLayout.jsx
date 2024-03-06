@@ -22,8 +22,6 @@ const StyledConatiner = styled.div`
 `;
 
 function AppLayout() {
-  console.log("here");
-
   return (
     <StyledAppLayout>
       <SideBar />
