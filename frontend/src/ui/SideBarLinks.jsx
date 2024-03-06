@@ -9,7 +9,6 @@ import {
   IoSettingsOutline,
   IoLogOutOutline,
 } from "react-icons/io5";
-// const ListContainer = styled.div``;
 
 const StyledList = styled.ul`
   display: flex;
@@ -19,9 +18,7 @@ const StyledList = styled.ul`
   gap: 2rem;
 `;
 
-const StyledListItem = styled.li`
-  /* display: flex; */
-`;
+const StyledListItem = styled.li``;
 
 const ListItem = styled.span`
   display: flex;
@@ -39,7 +36,6 @@ const linkStyle = {
   textDecoration: "none",
   color: "#0d131d",
 };
-// const NavLink = styled.NavLink``;
 
 function NavLinkItem({ to, children }) {
   return (
