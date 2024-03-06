@@ -2,15 +2,18 @@ import styled from "styled-components";
 import Button from "./Button";
 
 const StyledNav = styled.nav`
-  background-color: #fde047;
+  /* background-color: #f0f9ff; */
+  /* background-color: #f5f5f4; */
   border-radius: 1rem;
   text-align: center;
   padding: 1rem;
+  border-radius: 1rem;
 `;
 
 const List = styled.ul`
   list-style: none;
   display: flex;
+  justify-content: flex-end;
   gap: 1.2rem;
 `;
 
@@ -22,7 +25,7 @@ function NavBar() {
           <Button>Add Post</Button>
         </li>
         <li>
-          <Button>AI Image Recognition</Button>
+          <Button>AI</Button>
         </li>
       </List>
     </StyledNav>

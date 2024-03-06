@@ -1,33 +1,34 @@
 // import { useState, useEffect } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Feed from "./pages/Feed";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AppLayout from "./ui/AppLayout";
-
-const router = createBrowserRouter([
-  {
-    path: "/app",
-    element: <AppLayout />,
-    children: [
-      {
-        path: "feed",
-        element: <Feed />,
-      },
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/sign-up",
-    element: <Signup />,
-  },
-]);
+import Explore from "./pages/Explore";
+import Notification from "./pages/Notification";
+import Stats from "./pages/Stats";
+import Messages from "./pages/Messages";
+import Settings from "./pages/Settings";
 
 function App() {
-  return <RouterProvider router={router} />;
+  // return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Navigate replace to="feed" />} />
+          <Route path="feed" element={<Feed />} />
+          <Route path="explore" element={<Explore />} />
+          <Route path="messages" element={<Messages />} />
+          <Route path="notification" element={<Notification />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="stats" element={<Stats />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="sign-up" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
