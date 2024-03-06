@@ -4,6 +4,7 @@ import Feed from "./pages/Feed";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AppLayout from "./ui/AppLayout";
+import PageNotFound from "./pages/PageNotFound";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
       {
         path: "feed",
         element: <Feed />,
+        index: true,
       },
     ],
   },
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/sign-up",
     element: <Signup />,
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
 
