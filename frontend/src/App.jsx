@@ -3,11 +3,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Feed from "./pages/Feed";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import AppLayout from "./ui/AppLayout";
 
 const router = createBrowserRouter([
   {
     path: "/app",
-    element: <Feed />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: "feed",
+        element: <Feed />,
+      },
+    ],
   },
   {
     path: "/login",

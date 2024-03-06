@@ -1,5 +1,11 @@
+import MainFeed from "../ui/MainFeed";
+
 function Feed() {
-  return <div></div>;
+  return (
+    <>
+      <MainFeed />
+    </>
+  );
 }
 
 export default Feed;
