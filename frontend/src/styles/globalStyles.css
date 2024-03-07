@@ -9,3 +9,7 @@ body {
 }
 
 /* div {} */
+.react-icons {
+  vertical-align: middle;
+  font-size: 5rem;
+}
