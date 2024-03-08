@@ -11,7 +11,7 @@ import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
 
 function App() {
-  // return <RouterProvider router={router} />;
+  // console.log(x);
   return (
     <BrowserRouter>
       <Routes>

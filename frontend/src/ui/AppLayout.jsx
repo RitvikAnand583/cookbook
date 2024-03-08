@@ -19,6 +19,7 @@ const StyledConatiner = styled.div`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
   z-index: 2;
   border-radius: 1rem;
+  overflow: auto;
 `;
 
 function AppLayout() {
