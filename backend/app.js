@@ -1,20 +1,52 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import express from "express";
+import cookieParser from "cookie-parser";
+import indexRouter from './routers/index.router.js';
+import userRouter from "./routers/user.router.js";
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express()
 
-var app = express();
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
-module.exports = app;
+
+// to Except data in from of json
+app.use(express.json({limit: "16kb"}))
+
+// to Iecode the data came from urls
+app.use(express.urlencoded({extended:true}))
+
+// to store img or favicon 
+// make a public folder before uncomment it
+//app.use(express.static("public"))
+
+// to perform CRUD opration in browser(cookies) of user
+app.use(cookieParser())
+
+
+
+// routes
+app.use("/user" , userRouter)
+
+
+export{app}
+
+// var express = require('express');
+// var path = require('path');
+// var cookieParser = require('cookie-parser');
+// var logger = require('morgan');
+
+// var indexRouter = require('./routers/index.router');
+// var usersRouter = require('./routers/user.router');
+
+// var app = express();
+
+// app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+
+// module.exports = app;
