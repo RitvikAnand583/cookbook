@@ -6,12 +6,15 @@ let foods = foodWithImg.slice(1, 30);
 
 const StyledMainFeed = styled.div`
   /* background-color: #f87171; */
-  border-radius: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
-  padding: 0rem 3rem;
+  gap: 0.4rem;
+  padding: 2rem 3rem;
+  overflow: scroll;
+  grid-area: f;
+  scrollbar-width : none;
+  margin-right: 25rem;
 `;
 
 function MainFeed() {

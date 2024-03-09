@@ -14,11 +14,13 @@ const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   gap: 2rem;
 `;
 
-const StyledListItem = styled.li``;
+const StyledListItem = styled.li`
+  list-style-type: none;
+`;
 
 const ListItem = styled.span`
   display: flex;

@@ -24,6 +24,7 @@ const Name = styled.div`
 const UserName = styled.div`
   font-size: 1rem;
   font-weight: 200;
+  margin-bottom: 50px;
 `;
 
 function ProfileCard({ imagesrc, name, username }) {

@@ -12,7 +12,7 @@ const StyledPost = styled.div`
   flex-direction: column;
   background-color: #f5f5f4;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 1.6rem;
+  /* border-radius: 1.6rem; */
   padding: 1.6rem 0rem;
   gap: 1.2rem;
   /* width: 80%; */

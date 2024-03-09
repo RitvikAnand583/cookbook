@@ -4,13 +4,13 @@ import Search from "./Search";
 
 const StyledNav = styled.nav`
   /* background-color: #f0f9ff; */
-  /* background-color: #f5f5f4; */
-  border-radius: 1rem;
+  background-color: #f5f5f5;
   text-align: center;
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: 01rem;
   display: flex;
   justify-content: space-between;
+  grid-area: n;
+  border-bottom: 1px solid #ddd;
 `;
 
 const List = styled.ul`
@@ -26,10 +26,10 @@ function NavBar() {
       <Search />
       <List>
         <li>
-          <Button>Add Post</Button>
+          <Button>AI Recognisation</Button>
         </li>
         <li>
-          <Button>AI</Button>
+          <Button>Add Post</Button>
         </li>
       </List>
     </StyledNav>

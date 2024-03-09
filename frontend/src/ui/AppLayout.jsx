@@ -4,32 +4,35 @@ import NavBar from "../ui/NavBar";
 import SideBar from "../ui/SideBar";
 
 const StyledAppLayout = styled.div`
-  background-color: #f5f5f4;
+  background-color: #eff2f6;
   display: grid;
-  grid-template-columns: 1.2fr 4.5fr;
   height: 100vh;
-  /* gap: 1.2rem; */
-  /* padding: 0rem 1.2rem; */
+  grid-template-areas: 
+    "s n n n n n n n n n"
+    "s f f f f f f f f f"
+    "s f f f f f f f f f"
+    "s f f f f f f f f f"
+    "s f f f f f f f f f";
 `;
 const StyledConatiner = styled.div`
   display: grid;
   grid-template-rows: 5rem auto;
-  background-color: #fafafa;
-  gap: 0.8rem;
+  background-color: #f5f5f5 ;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
   z-index: 2;
   border-radius: 1rem;
   overflow: auto;
+  scrollbar-width:none;
 `;
 
 function AppLayout() {
   return (
     <StyledAppLayout>
       <SideBar />
-      <StyledConatiner>
-        <NavBar />
+      <NavBar />
+      {/* <StyledConatiner> */}
         <Outlet />
-      </StyledConatiner>
+      {/* </StyledConatiner> */}
     </StyledAppLayout>
   );
 }

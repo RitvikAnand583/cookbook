@@ -11,8 +11,9 @@ const InputContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #eee;
-  border-radius: 1rem;
+  background-color: #d8d3d3;
+  border-radius: 0.6rem;
+  height: 0.5rem;
 `;
 
 const Input = styled.input`
