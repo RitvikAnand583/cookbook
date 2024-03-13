@@ -4,6 +4,8 @@ import Search from "./Search";
 
 const StyledNav = styled.nav`
   /* background-color: #f0f9ff; */
+  // height: 50%;
+
   background-color: #f5f5f5;
   text-align: center;
   padding: 01rem;
