@@ -1,4 +1,4 @@
-import StyledInput from "../ui/Input";
+import Input from "../ui/Input";
 import StyledForm from "../ui/Form";
 import Button from "../ui/Button";
 import Row from "../ui/Row";
@@ -12,38 +12,38 @@ function Signup() {
       </div>
       <div>
         <StyledForm method="POST" action="/">
-          <StyledInput
+          <Input
             name="email"
             id="email"
             type="text"
             placeholder="Enter email or phone..."
-          ></StyledInput>
+          ></Input>
           <Row>
-            <StyledInput
+            <Input
               name="firstname"
               id="firstname"
               type="text"
               placeholder="First name"
-            ></StyledInput>
-            <StyledInput
+            ></Input>
+            <Input
               name="lastname"
               id="lastname"
               type="text"
               placeholder="Last name"
-            ></StyledInput>
+            ></Input>
           </Row>
-          <StyledInput
+          <Input
             name="password"
             id="password"
             type="password"
             placeholder="Enter password"
-          ></StyledInput>
-          <StyledInput
+          ></Input>
+          <Input
             name="confirmpassword"
             id="confirmpassword"
             type="password"
             placeholder="Confirm password"
-          ></StyledInput>
+          ></Input>
           <Row type="vertical">
             <Button>Sign Up</Button>
             {/* <Button type="button">Forgot password?</Button> */}
