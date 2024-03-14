@@ -8,6 +8,7 @@ const Row = styled.div`
     css`
       justify-content: space-around;
       align-items: center;
+      gap: 1rem;
     `}
 
   ${(props) =>

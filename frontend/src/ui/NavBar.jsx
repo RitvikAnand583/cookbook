@@ -1,6 +1,9 @@
 import styled from "styled-components";
+
 import Button from "./Button";
 import Search from "./Search";
+import NavLinkItem from "./NavLinkItem";
+import Row from "./Row";
 
 const StyledNav = styled.nav`
   /* background-color: #f0f9ff; */
@@ -15,25 +18,20 @@ const StyledNav = styled.nav`
   border-bottom: 1px solid #ddd;
 `;
 
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  /* justify-content: flex-end; */
-  gap: 1.2rem;
-`;
-
 function NavBar() {
   return (
     <StyledNav>
       <Search />
-      <List>
-        <li>
+      <Row>
+        <Row>
           <Button>AI Recognisation</Button>
-        </li>
-        <li>
-          <Button>Add Post</Button>
-        </li>
-      </List>
+        </Row>
+        <Row>
+          <Button>
+            <NavLinkItem to="/post">Add Post</NavLinkItem>
+          </Button>
+        </Row>
+      </Row>
     </StyledNav>
   );
 }

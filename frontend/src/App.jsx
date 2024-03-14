@@ -9,6 +9,7 @@ import Notification from "./pages/Notification";
 import Stats from "./pages/Stats";
 import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   // console.log(x);
@@ -23,6 +24,7 @@ function App() {
           <Route path="notification" element={<Notification />} />
           <Route path="settings" element={<Settings />} />
           <Route path="stats" element={<Stats />} />
+          <Route path="post" element={<CreatePost />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="sign-up" element={<Signup />} />
