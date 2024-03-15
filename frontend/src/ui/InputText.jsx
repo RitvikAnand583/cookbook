@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledInput = styled.input``;
+const Input = styled.input``;
 
 function InputText({ placeholder }) {
-  return <StyledInput type="text" placeholder={placeholder}></StyledInput>;
+  return <Input type="text" placeholder={placeholder}></Input>;
 }
 
 export default InputText;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Logo from "./Logo";
 import ProfileCard from "./ProfileCard";
-import ProfileStats from "./ProfileStats";
+// import ProfileStats from "./ProfileStats";
 import SideBarLinks from "./SideBarLinks";
 
 const StyledSideBar = styled.aside`

@@ -1,4 +1,4 @@
-import StyledInput from "../ui/Input";
+import Input from "../ui/Input";
 import StyledForm from "../ui/Form";
 import Button from "../ui/Button";
 import Row from "../ui/Row";
@@ -12,18 +12,18 @@ function Login() {
       </div>
       <div>
         <StyledForm method="POST" action="/">
-          <StyledInput
+          <Input
             name="email"
             id="email"
             type="text"
             placeholder="Enter email or phone..."
-          ></StyledInput>
-          <StyledInput
+          ></Input>
+          <Input
             name="password"
             id="password"
             type="password"
             placeholder="Enter password"
-          ></StyledInput>
+          ></Input>
           <Row type="vertical">
             <Button>Log in</Button>
             <Button type="button">Forgot password?</Button>
