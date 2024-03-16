@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const Row = styled.div`
+const StyledRow = styled.div`
   display: flex;
 
   ${(props) =>
@@ -19,8 +19,17 @@ const Row = styled.div`
     `}
 `;
 
-Row.defaultProps = {
+StyledRow.defaultProps = {
   type: "horizontal",
 };
+
+function Row({ children, style, type }) {
+  console.log(style);
+  return (
+    <StyledRow type={type} style={style && style}>
+      {children}
+    </StyledRow>
+  );
+}
 
 export default Row;
