@@ -24,7 +24,6 @@ StyledRow.defaultProps = {
 };
 
 function Row({ children, style, type }) {
-  console.log(style);
   return (
     <StyledRow type={type} style={style && style}>
       {children}

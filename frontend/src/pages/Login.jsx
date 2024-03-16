@@ -4,6 +4,8 @@ import Input from "../ui/Input";
 import StyledForm from "../ui/Form";
 import Button from "../ui/Button";
 import Row from "../ui/Row";
+import Heading from "../ui/Heading";
+import Message from "../ui/Message";
 
 const ImageContainer = styled.div`
   background-image: url("../../public/delicious-pizza-pepperoni-pizza-wallpaper-thumb.jpg");
@@ -19,10 +21,14 @@ function Login() {
   return (
     <ImageContainer>
       <Row style={{ height: "100vh" }}>
-        <Row style={{ backgroundColor: "black", opacity: 0.9 }}>
+        <Row
+          style={{ backgroundColor: "black", opacity: 0.9, padding: "2rem" }}
+        >
           <Row type="vertical">
-            <h1>CookBook🍴</h1>
-            <p>CookBook helps you share and post your favorite delicacies!</p>
+            <Heading style={{ color: "white" }}>CookBook🍴</Heading>
+            <Message style={{ color: "white" }}>
+              CookBook helps you share and post your favorite delicacies!
+            </Message>
           </Row>
           <Row>
             <StyledForm method="POST" action="/">
