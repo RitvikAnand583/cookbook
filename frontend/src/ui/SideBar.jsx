@@ -5,17 +5,14 @@ import ProfileCard from "./ProfileCard";
 import SideBarLinks from "./SideBarLinks";
 
 const StyledSideBar = styled.aside`
-  /* background-color: #f5f5f4; */
   text-align: center;
   display: flex;
   gap: 2rem;
   flex-direction: column;
-  /* padding: 2rem 0rem; */
-  width: 20rem;
+  width: 20vw;
   background-color: #f5f5f5;
   box-shadow: 1px 1px 5px rgba(41, 41, 41, 0.2);
   border-right: 1px solid #ddd;
-  grid-area: s;
 `;
 
 function SideBar() {

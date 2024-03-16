@@ -8,6 +8,7 @@ import {
 } from "react-icons/io5";
 
 const StyledPost = styled.div`
+  text-align: center;
   display: flex;
   flex-direction: column;
   background-color: #f5f5f4;
