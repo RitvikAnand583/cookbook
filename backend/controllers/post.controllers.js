@@ -44,10 +44,10 @@ const userRecipe = asyncHandler(async (req, res) => {
 
    const createdPost = await Post.findById(postDetails._id)
 
+   console.log("Post upload successfully");
     return res.status(201).json(
-        new ApiResponce(200, createdPost, "User registered Successfully")
+        new ApiResponce(200, createdPost, "Post Successfully")
     )
-
 })
 
 

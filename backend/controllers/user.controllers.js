@@ -35,6 +35,7 @@ const userRegister = asyncHandler(async (req,res) =>{
    const {username , email , fullName , password} = req.body;
    
    // validation
+   console.log(username);
    if ([username,email,fullName,password]
       .some((field) => field?.trim() === ""))
    {
@@ -47,13 +48,13 @@ const userRegister = asyncHandler(async (req,res) =>{
    if (isExisted) {
     throw new ApiError(404, "User already exists!") // user exist
 }
-
+    console.log("dhjbdh");
    // object to sending in db by create
     const userdetails = await User.create({
         fullName,
         email, 
         password,
-        username: username.toLowerCase()
+        username: username
    })
 
    // checking user created or not
@@ -120,6 +121,31 @@ const userLogin = asyncHandler(async (req , res) => {
     )
 })
 
+const logoutUser = asyncHandler(async(req, res) => {
+    await User.findByIdAndUpdate(
+        req.user._id,
+        {
+            $unset: {
+                refreshToken: 1 // this removes the field from document
+            }
+        },
+        {
+            new: true
+        }
+    )
+
+    const options = {
+        httpOnly: true,
+        secure: true
+    }
+
+    return res
+    .status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
+    .json(new ApiResponce(200, {}, "User logged Out"))
+})
 
 
-export {userRegister , userLogin }
+
+export {userRegister , userLogin ,logoutUser}

@@ -4,7 +4,7 @@ import {uploadPhoto} from "../controllers/uploadPhoto.controllers.js"
 
 const router = Router()
 
-// console.log("bhfdcv")
+// console.log("photo uploader")
 router.route("/Picture").post(
     upload.fields([
         {

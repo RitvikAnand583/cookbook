@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import indexRouter from './routers/index.router.js';
 import userRouter from "./routers/user.router.js";
 import pictureRouter from "./routers/photoUploder.routes.js"
+import postRouter from "./routers/post.router.js"
 
 const app = express()
 
@@ -28,6 +29,7 @@ app.use(cookieParser())
 // routes
 app.use("/user" , userRouter)
 app.use("/upload" , pictureRouter)
+// app.use("/user/post" , postRouter)
 
 
 export{app}
