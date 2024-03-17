@@ -9,39 +9,49 @@ import NavLinkItem from "../ui/NavLinkItem";
 const StyledNavBar = styled.nav`
   display: flex;
   gap: 4rem;
-  /* background-color: #a4a5aa; */
-  background-color: #fbfafb;
+  background-color: #f4f4f5;
+  /* background-color: #fbfafb; */
+  width: fit-content;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+
+  color: "grey";
+  text-decoration: "none";
 `;
+
+const navLinkStyle = {
+  color: "grey",
+  textDecoration: "none",
+};
 
 function Settings() {
   return (
-    <Row type="vertical">
+    <Row
+      type="vertical"
+      style={{ overflow: "scroll", overflowX: "hidden", padding: "1rem" }}
+    >
       <Row type="vertical" variation="one-liner">
         <Heading as="h2">Settings</Heading>
-        <Message style={{ fontSize: "1rem", fontWeight: 200 }}>
+        <Message style={{ fontSize: "1rem", fontWeight: 200, color: "grey" }}>
           {" "}
           Manage your account settings and preferences
         </Message>
       </Row>
       <hr />
-      <StyledNavBar>
-        <NavLinkItem to="profile">Profile</NavLinkItem>
-        <NavLinkItem to="appearance">Appearance</NavLinkItem>
-        <NavLinkItem to="security">Security</NavLinkItem>
-        <NavLinkItem to="favorites">Favorites</NavLinkItem>
-        <NavLinkItem to="notifications">Notifications</NavLinkItem>
-        <NavLinkItem to="followers-following">Followers</NavLinkItem>
-      </StyledNavBar>
-      {/* style={{ overflowY: "scroll", scrollbarWidth: "none" } */}
-      <div>
-        <Outlet />
+      <div style={{ overflow: "scroll", overflowX: "hidden" }}>
+        <StyledNavBar style={navLinkStyle}>
+          <NavLinkItem to="profile">Profile</NavLinkItem>
+          <NavLinkItem to="appearance">Appearance</NavLinkItem>
+          <NavLinkItem to="security">Security</NavLinkItem>
+          <NavLinkItem to="favorites">Favorites</NavLinkItem>
+          <NavLinkItem to="notifications">Notifications</NavLinkItem>
+          <NavLinkItem to="followers-following">Followers</NavLinkItem>
+        </StyledNavBar>
+        {/* style={{ overflowY: "scroll", scrollbarWidth: "none" } */}
+        <div style={{ padding: "1.2rem" }}>
+          <Outlet />
+        </div>
       </div>
-      {/* <List>
-        <ListItem>Change avatar</ListItem>
-        <ListItem>Change username</ListItem>
-        <ListItem>Change password</ListItem>
-        <ListItem>Toggle theme</ListItem>
-      </List> */}
     </Row>
   );
 }

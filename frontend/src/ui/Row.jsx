@@ -6,7 +6,7 @@ const StyledRow = styled.div`
   ${(props) =>
     props.type === "horizontal" &&
     css`
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       gap: 1rem;
     `}
@@ -22,6 +22,12 @@ const StyledRow = styled.div`
     props.variation === "one-liner" &&
     css`
       gap: 0;
+    `}
+  ${(props) =>
+    props.variation === "normal" &&
+    css`
+      /* gap: 0; */
+      justify-content: inherit;
     `}
 `;
 
