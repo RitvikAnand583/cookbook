@@ -1,19 +1,18 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const photoSchema = new Schema(
-    {
-        pictureName: {
-            type: String, //cloudinary url
-            required: true
-        },
-        Title: {
-            type: String, //cloudinary url
-        },
+  {
+    pictureName: {
+      type: String, //cloudinary url
+      required: true,
     },
-    {
-        timestamps: true
-    }
-)
+    Title: {
+      type: String, //cloudinary url
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-
-export const Photo = mongoose.model("photo", photoSchema)
+export const Photo = mongoose.model("photo", photoSchema);

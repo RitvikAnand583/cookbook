@@ -3,7 +3,7 @@ import Post from "./Post";
 import foodWithImg from "../data/JSON/foodWithImg.json";
 import WhoToFollow from "./WhoToFollow";
 
-let foods = foodWithImg.slice(1, 30);
+let foods = foodWithImg.slice(200, 250);
 
 const MainFeedContainer = styled.div`
   display: flex;
@@ -16,8 +16,9 @@ const StyledMainFeed = styled.div`
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  overflow-x: hidden;
   scrollbar-width: none;
-  gap: 0.4rem;
+  gap: 0.8rem;
   padding: 2rem 3rem;
   width: 60vw;
 `;

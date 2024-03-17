@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "./Button";
+import UserCard from "./UserCard";
 
 const users = [
   {
@@ -7,35 +8,35 @@ const users = [
     userImg: `src/data/images/shirley/${
       Math.floor(Math.random() * 40) + 1
     }.jpg`,
-    designation: "Web Devloper",
+    username: "Web Devloper",
   },
   {
     name: "Jai",
     userImg: `src/data/images/shirley/${
       Math.floor(Math.random() * 40) + 1
     }.jpg`,
-    designation: "Web Devloper",
+    username: "Web Devloper",
   },
   {
     name: "Viral",
     userImg: `src/data/images/shirley/${
       Math.floor(Math.random() * 40) + 1
     }.jpg`,
-    designation: "Data Scientist",
+    username: "Data Scientist",
   },
   {
     name: "Harsh",
     userImg: `src/data/images/shirley/${
       Math.floor(Math.random() * 40) + 1
     }.jpg`,
-    designation: "AI Engineer",
+    username: "AI Engineer",
   },
   {
     name: "Tiwari",
     userImg: `src/data/images/shirley/${
       Math.floor(Math.random() * 40) + 1
     }.jpg`,
-    designation: "Chore Boy",
+    username: "Chore Boy",
   },
 ];
 
@@ -51,30 +52,21 @@ const StyledWhoToFollow = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 1.2rem;
   text-align: center;
+  margin-right: 2rem;
 `;
 
 const StyledProfileCard = styled.div`
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
   margin-bottom: 1rem;
 `;
 
 function ProfileCard({ user }) {
-  const { name, userImg, designation } = user;
+  const { name, userImg, username } = user;
   return (
     <StyledProfileCard>
-      <img
-        src={userImg}
-        style={{
-          width: "3.5rem",
-          height: "3.5rem",
-          borderRadius: "50%",
-        }}
-      />
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <span>{name}</span>
-        <span>{designation}</span>
-      </div>
+      <UserCard name={name} userImg={userImg} username={username} />
       <Button>+</Button>
     </StyledProfileCard>
   );
