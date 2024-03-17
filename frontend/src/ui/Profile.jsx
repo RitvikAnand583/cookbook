@@ -8,7 +8,7 @@ import TextArea from "./Textarea";
 
 function Profile() {
   return (
-    <div style={{ overflow: "auto", scrollbarWidth: "none" }}>
+    <div>
       <div>
         <Row type="vertical" variation="one-liner">
           <Heading as="h3">Basic Details</Heading>
@@ -28,14 +28,14 @@ function Profile() {
                 <Input type="text"></Input>
               </Row>
               <Row type="vertical" variation="one-liner">
-                <Label size="0.9rem" color="grey">
+                <Label size="0.8rem" color="grey">
                   Last Name
                 </Label>
                 <Input type="text"></Input>
               </Row>
             </Row>
             <Row type="vertical" variation="one-liner">
-              <Label size="0.9rem" color="grey">
+              <Label size="0.8rem" color="grey">
                 Birth Date
               </Label>
               <Input type="text"></Input>
@@ -57,13 +57,13 @@ function Profile() {
         </Row>
         <div>
           <Row type="vertical" variation="one-liner">
-            <Label size="0.9rem" color="grey">
+            <Label size="0.8rem" color="grey">
               Change avatar
             </Label>
             <Input type="file"></Input>
           </Row>
           <Row type="vertical" variation="one-liner">
-            <Label size="0.9rem" color="grey">
+            <Label size="0.8rem" color="grey">
               Short Bio
             </Label>
             <TextArea>Write something here</TextArea>
@@ -84,19 +84,19 @@ function Profile() {
         <section>
           <div>
             <Row type="vertical" variation="one-liner">
-              <Label size="0.9rem" color="grey">
+              <Label size="0.8rem" color="grey">
                 City
               </Label>
               <Input type="text"></Input>
             </Row>
             <Row type="vertical" variation="one-liner">
-              <Label size="0.9rem" color="grey">
+              <Label size="0.8rem" color="grey">
                 Country
               </Label>
               <Input type="text"></Input>
             </Row>
             <Row type="vertical" variation="one-liner">
-              <Label size="0.9rem" color="grey">
+              <Label size="0.8rem" color="grey">
                 Postal Code
               </Label>
               <Input type="text"></Input>
