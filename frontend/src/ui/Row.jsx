@@ -17,15 +17,21 @@ const StyledRow = styled.div`
       flex-direction: column;
       gap: 1.6rem;
     `}
+
+  ${(props) =>
+    props.variation === "one-liner" &&
+    css`
+      gap: 0;
+    `}
 `;
 
 StyledRow.defaultProps = {
   type: "horizontal",
 };
 
-function Row({ children, style, type }) {
+function Row({ children, style, type, variation }) {
   return (
-    <StyledRow type={type} style={style && style}>
+    <StyledRow type={type} style={style && style} variation={variation}>
       {children}
     </StyledRow>
   );

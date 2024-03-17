@@ -16,7 +16,7 @@ const StyledHeading = styled.h1`
   ${(props) =>
     props.as === "h3" &&
     css`
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 500;
     `} /* line-height */
 `;
