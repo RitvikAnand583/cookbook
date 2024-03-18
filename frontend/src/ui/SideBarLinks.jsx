@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import NavLinkItem from "./NavLinkItem";
 import {
   IoSearchOutline,
   IoAppsOutline,
-  IoNotificationsOutline,
+  // IoNotificationsOutline,
   IoChatbubbleEllipsesOutline,
   IoCellularOutline,
   IoSettingsOutline,
@@ -18,10 +18,6 @@ const StyledList = styled.ul`
   gap: 2rem;
 `;
 
-const StyledListItem = styled.li`
-  list-style-type: none;
-`;
-
 const ListItem = styled.span`
   display: flex;
   gap: 2.4rem;
@@ -33,21 +29,6 @@ const SVG = styled.span`
   margin-left: 2rem;
   text-align: center;
 `;
-
-const linkStyle = {
-  textDecoration: "none",
-  color: "#0d131d",
-};
-
-function NavLinkItem({ to, children }) {
-  return (
-    <StyledListItem>
-      <NavLink to={to} style={linkStyle}>
-        {children}
-      </NavLink>
-    </StyledListItem>
-  );
-}
 
 function SideBarLinks() {
   return (
@@ -64,7 +45,7 @@ function SideBarLinks() {
           Explore
         </ListItem>
       </NavLinkItem>
-      <NavLinkItem to={"/notification"}>
+      {/* <NavLinkItem to={"/notification"}>
         <ListItem>
           <SVG>{<IoNotificationsOutline />}</SVG>
           Notification
@@ -74,6 +55,12 @@ function SideBarLinks() {
         <ListItem>
           <SVG>{<IoChatbubbleEllipsesOutline />}</SVG>
           Messages
+        </ListItem>
+      </NavLinkItem> */}
+      <NavLinkItem to={"/post"}>
+        <ListItem>
+          <SVG>{<IoChatbubbleEllipsesOutline />}</SVG>
+          Post
         </ListItem>
       </NavLinkItem>
       <NavLinkItem to={"/stats"}>
@@ -90,7 +77,7 @@ function SideBarLinks() {
       </NavLinkItem>
 
       <NavLinkItem>
-        <ListItem>
+        <ListItem style={{ color: "red", paddingTop: "1.5rem" }}>
           <SVG>{<IoLogOutOutline />}</SVG>
           Logout
         </ListItem>
