@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Post from "./Post";
-import foodWithImg from "../data/JSON/foodWithImg.json";
-import WhoToFollow from "./WhoToFollow";
+import Post from "../../ui/Post";
+import foodWithImg from "../../data/JSON/foodWithImg.json";
+import WhoToFollow from "../../ui/WhoToFollow";
 
 let foods = foodWithImg.slice(200, 250);
 

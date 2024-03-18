@@ -10,12 +10,12 @@ import Stats from "./pages/Stats";
 import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
 import CreatePost from "./pages/CreatePost";
-import Profile from "./ui/Profile";
-import Appearance from "./ui/Appearance";
-import Security from "./ui/Security";
-import Notifications from "./ui/Notifications";
-import Favorites from "./ui/Favorites";
-import Followers from "./ui/Followers";
+import Profile from "./features/settings/Profile";
+import Appearance from "./features/settings/Appearance";
+import Security from "./features/settings/Security";
+import Notifications from "./features/settings/Notifications";
+import Favorites from "./features/settings/Favorites";
+import Followers from "./features/settings/Followers";
 
 function App() {
   // console.log(x);

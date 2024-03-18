@@ -1,10 +1,10 @@
-import Button from "./Button";
-import Heading from "./Heading";
-import Input from "./Input";
-import Label from "./Label";
-import Message from "./Message";
-import Row from "./Row";
-import Select from "./Select";
+import Button from "../../ui/Button";
+import Heading from "../../ui/Heading";
+import Input from "../../ui/Input";
+import Label from "../../ui/Label";
+import Message from "../../ui/Message";
+import Row from "../../ui/Row";
+import Select from "../../ui/Select";
 
 function Appearance() {
   return (
