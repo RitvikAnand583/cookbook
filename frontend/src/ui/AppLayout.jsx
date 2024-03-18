@@ -4,7 +4,7 @@ import NavBar from "../ui/NavBar";
 import SideBar from "../ui/SideBar";
 
 const StyledAppLayout = styled.div`
-  background-color: #eff2f6;
+  background-color: #ffffff;
   height: 100vh;
   display: flex;
 `;

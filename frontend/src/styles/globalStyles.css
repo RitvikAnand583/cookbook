@@ -15,3 +15,10 @@ body {
   vertical-align: middle;
   font-size: 5rem;
 }
+
+input::file-selector-button {
+  background-color: #f4f4f5;
+  /* border: 3px solid black; */
+  border: 1px solid #d5d5d5;
+  border-radius: 5%;
+}

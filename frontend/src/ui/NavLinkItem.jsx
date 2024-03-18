@@ -1,19 +1,15 @@
 import { NavLink } from "react-router-dom";
 
-import ListItem from "./ListItem";
-
 const defaultLinkStyle = {
   textDecoration: "none",
-  color: "#0d131d",
+  color: "inherit",
 };
 
 function NavLinkItem({ to, children, linkStyle = defaultLinkStyle }) {
   return (
-    <ListItem>
-      <NavLink to={to} style={linkStyle}>
-        {children}
-      </NavLink>
-    </ListItem>
+    <NavLink to={to} style={linkStyle}>
+      {children}
+    </NavLink>
   );
 }
 
