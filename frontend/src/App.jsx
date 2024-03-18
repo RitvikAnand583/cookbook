@@ -16,13 +16,21 @@ import Security from "./features/settings/Security";
 import Notifications from "./features/settings/Notifications";
 import Favorites from "./features/settings/Favorites";
 import Followers from "./features/settings/Followers";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   // console.log(x);
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<AppLayout />}>
+        <Route
+          element={
+            <ProtectedRoute>
+              <AppLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Navigate replace to="feed" />} />
           <Route path="feed" element={<Feed />} />
           <Route path="explore" element={<Explore />} />
@@ -42,6 +50,7 @@ function App() {
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="sign-up" element={<Signup />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
