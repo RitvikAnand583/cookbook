@@ -1,3 +1,4 @@
+import Button from "./Button";
 import Heading from "./Heading";
 import Input from "./Input";
 import Label from "./Label";
@@ -33,10 +34,11 @@ function Appearance() {
             </Row>
           </div>
         </section>
-        <br />
+        {/* <br /> */}
         <hr style={{ borderTop: "1px solid #f4f4f5" }} />
         {/* <div style={{ border: "1px solid grey" }}></div> */}
       </Row>
+      <Button>Save changes</Button>
     </div>
   );
 }
