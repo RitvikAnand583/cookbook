@@ -1,11 +1,13 @@
 import { Router } from "express";
 import { userRegister,
          userLogin,
-         logoutUser } from "../controllers/user.controllers.js";
+         logoutUser,
+         getUserChannelProfile } from "../controllers/user.controllers.js"; 
+         import { toggleFollowed } from "../controllers/isFollowing.controllers.js" 
 import {userRecipe} from "../controllers/post.controllers.js"
 import {upload} from "../middlewares/multer.middleware.js"
 import {verifyJWT} from "../middlewares/auth.middleware.js"
-import {isLogin} from "../middlewares/isLogin.middleware.js"
+// import { UploadStream } from "cloudinary";
 const router = Router();
 
 
@@ -16,7 +18,10 @@ router.route("/login").post(userLogin);
 
 router.route("/logout").post(verifyJWT,  logoutUser)
 
-router.use(isLogin); 
+router.route("/c/:username").get(verifyJWT,  getUserChannelProfile)
+router.route("/id/:channelId").get(verifyJWT,  toggleFollowed)
+
+
 router.route("/postRecipe").post(
     upload.fields([
         {
@@ -25,5 +30,6 @@ router.route("/postRecipe").post(
         }
     ]),verifyJWT,
     userRecipe);
+
 
 export default router;

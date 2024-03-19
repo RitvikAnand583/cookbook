@@ -23,10 +23,6 @@ const postSchema = new Schema(
             type: String, 
             required: true
         },
-        isPublished: {
-            type: Boolean,
-            default: true
-        },
         owner: {
             type: Schema.Types.ObjectId,
             ref: "User"

@@ -11,18 +11,18 @@ const userRecipe = asyncHandler(async (req, res) => {
     // check all feild are present
     // upload img
     // save in db
-
-
+    
+    
     const {title , ingredient , recipe , level} = req.body;
-   
-   // validation
-   if ([title,ingredient,recipe,level]
-      .some((field) => field?.trim() === ""))
-   {
-    throw new ApiError(400, "All fields are required")
-   }
 
-    const pictureNameLocalPath = req.files?.foodPicture[0]?.path;
+    // validation
+    if ([title,ingredient,recipe,level]
+        .some((field) => field?.trim() === ""))
+        {
+            throw new ApiError(400, "All fields are required")
+        }
+        
+        const pictureNameLocalPath = req.files?.foodPicture[0]?.path;
     
     if (!pictureNameLocalPath) {
         throw new ApiError(400, "pictureName file is required")

@@ -9,12 +9,12 @@ const router = Router();
 // router.use(verifyJWT); 
 router.route("/postRecipe")
     .post(
-        // upload.fields([
-        //     {
-        //         name: "foodPicture",
-        //         maxCount: 1
-        //     }
-        // ]),
+        upload.fields([
+            {
+                name: "foodPicture",
+                maxCount: 1
+            }
+        ]),
         userRecipe);
 
 export default router;

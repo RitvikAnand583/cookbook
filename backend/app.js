@@ -29,7 +29,7 @@ app.use(cookieParser())
 // routes
 app.use("/user" , userRouter)
 app.use("/upload" , pictureRouter)
-// app.use("/user/post" , postRouter)
+// app.use("/user" , postRouter)
 
 
 export{app}

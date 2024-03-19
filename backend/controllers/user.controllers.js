@@ -148,4 +148,81 @@ const logoutUser = asyncHandler(async(req, res) => {
 
 
 
-export {userRegister , userLogin ,logoutUser}
+// getting follower and following detial
+const getUserChannelProfile = asyncHandler(async(req, res) => {
+    const {username} = req.params
+
+    if (!username?.trim()) {
+        throw new ApiError(400, "username is missing")
+    }
+
+    const channel = await User.aggregate([
+        {
+            // to is user present 
+            // also check outside of aggregation
+            $match: {
+                username: username?.toLowerCase()
+            }
+        },
+        {
+            $lookup: {
+                from: "isfolloweds",
+                localField: "_id",
+                foreignField: "followers",
+                as: "followers" // no. of followers
+            }
+        },
+        {
+            $lookup: {
+                from: "isfolloweds",
+                localField: "_id",
+                foreignField: "following",
+                as: "following" // no. of following 
+            }
+        },
+        {
+            $addFields: {
+                following: {
+                    $size: "$following"
+                },
+                followers: {
+                    $size: "$followers"
+                },
+                
+                isSubscribed: {
+                    $cond: {
+                        if: {$in: [req.user?._id, "$following.following"]},
+                        then: true,
+                        else: false
+                    }
+                }
+            }
+        },
+        {
+            $project: {
+                fullName: 1,
+                username: 1,
+                followers: 1,
+                following: 1,
+                isSubscribed: 1,
+                avatar: 1,
+                coverImage: 1,
+                email: 1
+
+            }
+        }
+    ])
+
+    if (!channel?.length) {
+        throw new ApiError(404, "channel not exists")
+    }
+
+    return res
+    .status(200)
+    .json(
+        new ApiResponce(200, channel[0], "User channel fetched successfully")
+    )
+})
+
+
+export {userRegister ,userLogin ,logoutUser,changeCurrentPassword, updateAccountDetails, updateEmail ,getUserChannelProfile }
