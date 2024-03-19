@@ -75,8 +75,8 @@ function SideBarLinks() {
           Settings
         </ListItem>
       </NavLinkItem>
-
-      <NavLinkItem>
+      {/* dummy route for now */}
+      <NavLinkItem to={"/logout"}>
         <ListItem style={{ color: "red", paddingTop: "1.5rem" }}>
           <SVG>{<IoLogOutOutline />}</SVG>
           Logout
