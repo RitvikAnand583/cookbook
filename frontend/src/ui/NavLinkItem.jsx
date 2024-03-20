@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import ListItem from "./ListItem";
+// import ListItem from "./ListItem";
 
 const defaultLinkStyle = {
   textDecoration: "none",
@@ -10,8 +10,9 @@ const defaultLinkStyle = {
 const StyledNavLink = styled(NavLink)`
   &.active > span {
     /* background-color: #b7b7b7; */
-    text-decoration: underline;
-    text-decoration-color: black;
+    /* text-decoration: underline; */
+    /* text-decoration-color: black; */
+    color: #00ff22;
   }
 `;
 

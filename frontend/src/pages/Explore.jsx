@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ExploreGrid from "../features/Explore/ExploreGrid";
+import WhoToFollow from "../ui/WhoToFollow";
 
 const StyledGrid = styled.div`
   //width: 100%;
@@ -6,28 +8,18 @@ const StyledGrid = styled.div`
   overflow: scroll;
   scrollbar-width: none;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
   gap: 2rem;
+  background-color: #fff;
 `;
 
 function Explore() {
+  // return <StyledGrid></StyledGrid>;
   return (
     <StyledGrid>
-      <div>Test 1</div>
-      <div>Test 2</div>
-      <div>Test 3</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
-      <div>Test 4</div>
+      <ExploreGrid />
+      <WhoToFollow />
     </StyledGrid>
   );
 }
