@@ -37,6 +37,10 @@ const StyledTag = styled.span`
   padding: 0.5rem;
 `;
 
+const StyledDifficultyLevel = styled.span`
+  padding: 0.5rem;
+`;
+
 const tags = [
   { name: "Vegetarian", id: "veg", color: "green" },
   { name: "Eggetarian", id: "eggveg", color: "blue" },
@@ -78,7 +82,7 @@ function CreatePost() {
   }
 
   return (
-    <Row type="vertical" style={{ padding: "1rem" }}>
+    <Row type="vertical" style={{ padding: "1rem", overflow: "scroll" }}>
       <Row type="vertical" variation="one-liner">
         <Heading as="h2">Create Post here</Heading>
         <Message style={{ fontSize: "1rem", fontWeight: 200, color: "grey" }}>
@@ -89,7 +93,7 @@ function CreatePost() {
       <hr />
 
       <StyledForm action="https://httpbin.org/post" method="POST" id="form">
-        <Row type="vertical">
+        <Row type="vertical" style={{ overflow: "scroll" }}>
           <Row type="vertical" variation="one-liner">
             <Label size="1rem" color="grey">
               Name
@@ -141,24 +145,63 @@ function CreatePost() {
               Difficulty Level:
             </Label>
             <div>
-              <input type="radio" name="difficultylevel" value="beginner" />
-              <label htmlFor="beginner">Beginner</label>
-              <input type="radio" name="difficultylevel" value="amateur" />
-              <label htmlFor="amateur">Amateur</label>
-              <input
-                type="radio"
-                name="difficultylevel"
-                value="intermmediate"
-              />
-              <label htmlFor="intermmediate">Intermmediate</label>
-              <input type="radio" name="difficultylevel" value="advanced" />
-              <label htmlFor="advanced">Advanced</label>
-              <input type="radio" name="difficultylevel" value="professional" />
-              <label htmlFor="professional">Professional</label>
+              <StyledDifficultyLevel>
+                <input type="radio" name="difficultylevel" value="beginner" />
+                <label htmlFor="beginner">Beginner</label>
+              </StyledDifficultyLevel>
+              <StyledDifficultyLevel>
+                <input type="radio" name="difficultylevel" value="amateur" />
+                <label htmlFor="amateur">Amateur</label>
+              </StyledDifficultyLevel>
+              <StyledDifficultyLevel>
+                <input
+                  type="radio"
+                  name="difficultylevel"
+                  value="intermmediate"
+                />
+                <label htmlFor="intermmediate">Intermmediate</label>
+              </StyledDifficultyLevel>
+              <StyledDifficultyLevel>
+                <input type="radio" name="difficultylevel" value="advanced" />
+                <label htmlFor="advanced">Advanced</label>
+              </StyledDifficultyLevel>
+              <StyledDifficultyLevel>
+                <input
+                  type="radio"
+                  name="difficultylevel"
+                  value="professional"
+                />
+                <label htmlFor="professional">Professional</label>
+              </StyledDifficultyLevel>
             </div>
           </Row>
+          <Label size="1rem" color="grey">
+            Ingredients
+          </Label>
+          <div>
+            <div>
+              <span>Product</span> :<span>Quantity</span>
+            </div>
+            <div>
+              <textarea name="product[]" rows="1" cols="10" />:
+              <textarea name="quantity[]" rows="1" cols="10" />
+            </div>
+            <button type="button">+</button>
+          </div>
+
           <Label>Recipe:</Label>
-          <textarea name="recipe" placeholder="...write here" />
+          {
+            // write the instructions here
+          }
+          <Row type="vertical">
+            <textarea name="recipe[]" placeholder="...write here" rows="1" />
+            <textarea name="recipe[]" placeholder="...write here" rows="1" />
+            <textarea name="recipe[]" placeholder="...write here" rows="1" />
+            <textarea name="recipe[]" placeholder="...write here" rows="1" />
+            <textarea name="recipe[]" placeholder="...write here" rows="1" />
+          </Row>
+          <button type="button">+</button>
+
           <button onClick={() => onSubmit()} type="submit" formTarget="_blank">
             Submit
           </button>
