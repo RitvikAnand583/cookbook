@@ -146,6 +146,88 @@ const logoutUser = asyncHandler(async(req, res) => {
     .json(new ApiResponce(200, {}, "User logged Out"))
 })
 
+// update or change password 
+const changeCurrentPassword = asyncHandler(async(req, res) => {
+    // get old password
+    // check old passowrd by calling fxn made in schema
+    // if incorrect then return error
+    // if correct change the old password
+
+    const{oldPassword, newPassword} = req.body
+
+    const user = await User.findById(req.user?._id)
+    console.log(oldPassword, newPassword);
+    const isCorrect = await user.isPasswordCorrect(oldPassword);
+    console.log(isCorrect);
+    if(!isCorrect) {
+        throw new ApiError(400, "password is incorrect")
+    }
+
+    user.password = newPassword
+    await user.save({validateBeforeSave: false})
+
+    return res
+    .status(200)
+    .json(new ApiResponce(200, {}, "Password changed successfully"))
+
+})
+
+// update or change user Details
+const updateAccountDetails = asyncHandler(async(req, res) => {
+    // get detial 
+    // check from db 
+    // update it
+
+    const {fullName} = req.body
+
+    if (!fullName) {
+        throw new ApiError(400, "Full Name is required")
+    }
+
+    const user = await User.findByIdAndUpdate(
+        req.user?._id,
+        {
+            $set: {
+                fullName,
+            }
+        },
+        {new: true}
+        
+    ).select("-password")
+
+    return res
+    .status(200)
+    .json(new ApiResponce(200, user, "Full Name updated successfully"))
+
+})
+
+const updateEmail = asyncHandler(async(req, res) => {
+    // get detial 
+    // check from db 
+    // update it
+
+    const {email} = req.body
+
+    if (!email) {
+        throw new ApiError(400, "Email is required")
+    }
+
+    const user = await User.findByIdAndUpdate(
+        req.user?._id,
+        {
+            $set: {
+                email: email
+            }
+        },
+        {new: true}
+        
+    ).select("-password")
+
+    return res
+    .status(200)
+    .json(new ApiResponce(200, user, "Email updated successfully"))
+
+})
 
 
 // getting follower and following detial
