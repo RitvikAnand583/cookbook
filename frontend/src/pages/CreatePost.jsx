@@ -7,6 +7,7 @@ import Heading from "../ui/Heading";
 import Message from "../ui/Message";
 import TextArea from "../ui/Textarea";
 import Checkbox from "../ui/Checkbox";
+import { useState } from "react";
 
 const StyledNavBar = styled.nav`
   display: flex;
@@ -47,38 +48,34 @@ const tags = [
   { name: "Non-Vegetarian", id: "nonveg", color: "red" },
   { name: "Gluten-free", id: "glutenfree", color: "yellow" },
   { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
-  { name: "Vegan", id: "vegan", color: "purple" },
 ];
 
 function CreatePost() {
+  const [ingredients, setIngredients] = useState([{}]);
+  const [instructions, setInstructions] = useState([""]);
+  console.log(ingredients);
+
   function onSubmit() {
     // e.preventDefault();
     const form = document.getElementById("form");
     console.log(form);
+  }
+
+  function handleIncreaseIngredients() {
+    setIngredients((state) => {
+      //console.log(state);
+
+      return state.concat([{}]);
+      //return state;
+    });
+  }
+  function handleIncreaseInstructions() {
+    setInstructions((state) => {
+      //console.log(state);
+
+      return state.concat([""]);
+      //return state;
+    });
   }
 
   return (
@@ -182,11 +179,29 @@ function CreatePost() {
             <div>
               <span>Product</span> :<span>Quantity</span>
             </div>
-            <div>
-              <textarea name="product[]" rows="1" cols="10" />:
-              <textarea name="quantity[]" rows="1" cols="10" />
-            </div>
-            <button type="button">+</button>
+            {ingredients.map((ingredient, index) => {
+              return (
+                <div key={index}>
+                  <textarea
+                    name="product[]"
+                    value={ingredient.product}
+                    rows="1"
+                    cols="10"
+                  />
+                  :
+                  <textarea
+                    name="quantity[]"
+                    value={ingredient.quantity}
+                    rows="1"
+                    cols="10"
+                  />
+                </div>
+              );
+            })}
+
+            <button type="button" onClick={handleIncreaseIngredients}>
+              +
+            </button>
           </div>
 
           <Label>Recipe:</Label>
@@ -194,15 +209,30 @@ function CreatePost() {
             // write the instructions here
           }
           <Row type="vertical">
+            {/* <textarea name="recipe[]" placeholder="...write here" rows="1" /> */}
+            {instructions.map((instruction, index) => {
+              return (
+                <div key={index}>
+                  <textarea
+                    name="recipe[]"
+                    //placeholder="...write here"
+                    rows="1"
+                    cols="40"
+                    defaultValue={instruction}
+                  />
+                </div>
+              );
+            })}
+            {/* <textarea name="recipe[]" placeholder="...write here" rows="1" />
             <textarea name="recipe[]" placeholder="...write here" rows="1" />
             <textarea name="recipe[]" placeholder="...write here" rows="1" />
-            <textarea name="recipe[]" placeholder="...write here" rows="1" />
-            <textarea name="recipe[]" placeholder="...write here" rows="1" />
-            <textarea name="recipe[]" placeholder="...write here" rows="1" />
+            <textarea name="recipe[]" placeholder="...write here" rows="1" /> */}
           </Row>
-          <button type="button">+</button>
+          <button type="button" onClick={handleIncreaseInstructions}>
+            +
+          </button>
 
-          <button onClick={() => onSubmit()} type="submit" formTarget="_blank">
+          <button onClick={onSubmit} type="submit" formTarget="_blank">
             Submit
           </button>
         </Row>
