@@ -11,14 +11,12 @@ const postSchema = new Schema(
             required: true
         },
         // badMai: array at the place of string 
-        ingredient: {
-            type: String, 
-            required: true
-        },
-        recipe: {
-            type: String, 
-            required: true
-        },
+        ingredient: [String],
+        quantity: [String],
+        ingredientDetial: [String],
+
+        recipe: [String],
+
         level: {
             type: String, 
             required: true
