@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ExploreGrid from "../features/Explore/ExploreGrid";
+import ExploreGrid from "../features/explore/ExploreGrid";
 import WhoToFollow from "../ui/WhoToFollow";
 
 const StyledGrid = styled.div`
